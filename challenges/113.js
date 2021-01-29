@@ -29,8 +29,17 @@
 
 //_**Note: in the above example, numbers array should remain unchanged after being used by your function.**_
 
-function betterFilter("add 2 arguments here") {
-  // and use them here
+function betterFilter(arr, func) {
+
+  let newArr = [];
+
+  for (let i=0; i<arr.length; i++) {
+    if (func(arr[i]) == true) {
+      newArr.push(arr[i]);
+    } 
+    
+  } return newArr;
+
 }
 
 function onlyEvens(n) {
@@ -43,6 +52,6 @@ function onlyEvens(n) {
 
 numbers = [1,2,3,4,5] //example
 
-betterFilter(numbers, onlyEvens);  //example use of your betterFilter fn
+// console.log(betterFilter(numbers, onlyEvens));  //example use of your betterFilter fn
 
 module.exports = betterFilter;
